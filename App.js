@@ -1,3 +1,4 @@
+/* eslint-disable prettier/prettier */
 // In App.js in a new project
 
 import * as React from 'react';
@@ -6,6 +7,7 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import Profile from './Containers/Profile';
 import About from './Containers/About';
+import Model from './Containers/Model';
 
 function HomeScreen({navigation}) {
   const [data , SetData] = React.useState([
@@ -17,8 +19,11 @@ function HomeScreen({navigation}) {
   return (
     <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
       <Text>Home Screen</Text>
-      <Button title='Profile' onPress={() => navigation.navigate('Profile',data)} />
-      <Button title='About' onPress={() => navigation.navigate('About',data)} />
+      <Button title="Profile" onPress={() => navigation.navigate('Profile',data)} />
+      <Text>Profile</Text>
+      <Button title="About" onPress={() => navigation.navigate('About',data)} />
+      <Text>Model</Text>
+      <Button title="Model" onPress={() => navigation.navigate('Model',data)} />
     </View>
   );
 }
@@ -32,6 +37,7 @@ function App() {
         <Stack.Screen name="Home" component={HomeScreen} />
         <Stack.Screen name="Profile" component={Profile} />
         <Stack.Screen name="About" component={About} />
+        <Stack.Screen name="Model" component={Model} />
       </Stack.Navigator>
     </NavigationContainer>
   );
