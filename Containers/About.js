@@ -19,7 +19,7 @@ const About = () => {
         }, 1000);
     }, []);
 
-    const fetchPosts = async () => {
+    const fetchPosts = () => {
         const apiURL = 'https://jsonplaceholder.typicode.com/posts';
         fetch(apiURL)
             .then(response => response.json())
